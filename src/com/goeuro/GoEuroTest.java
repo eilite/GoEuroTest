@@ -6,9 +6,12 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.junit.Test;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -107,7 +110,7 @@ public class GoEuroTest {
                 writeInCsvFile(response);
             }
         } catch (Exception e) {
-            System.err.println("An error occured while getting the informations about"+city);
+            System.err.println("An error occured while getting the informations about "+city);
             return;
         }
     }
@@ -119,4 +122,5 @@ public class GoEuroTest {
     public void setCity(String city) {
         this.city = city;
     }
+
 }
